@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang=zh-cmn-Hans>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Films</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/template-web.js"></script>
+
+    <link href="css/films.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="js/filminfo.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+            <a class="navbar-brand" href="index.html">FILMS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">首页推荐</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="filmslist.html">电影大全</a>
+                    </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0">
+                    <input id="searchValue" class="form-control mr-sm-2" type="text" placeholder="搜索电影"
+                        aria-label="Search">
+                    <button id="searchBtn" class="btn search-btn my-2 my-sm-0" type="submit"">搜索</button>
+                    </form>
+            </div>
+        </nav>
+    </header>
+
+    <div class=" content"></div>
+
+    <script id="filminfo" type="text/html">
+        <h1>{{FILM_title}}</h1>
+        <div class="filminfo">
+            <div class="bigPoster">
+                <img src="{{FILM_poster}}" alt="{{FILM_title}}">
+            </div>
+            <div class="info">
+                <div>
+                    <span class="infohead">评分：</span><span class="rating">{{FILM_ratingAverage}}</span>
+                </div>
+                <div>
+                    <span class="infohead">评价人数：{{FILM_ratingPeople}}</span>
+                </div>
+                <div>
+                    <span class="infohead">上映日期：{{FILM_pubdate}}</span>
+                </div>
+                <div>
+                    <span class="infohead">制片国家/地区：{{FILM_countries}}</span>
+                </div>
+                <div>
+                    <span class="infohead">语言：{{FILM_languages}}</span>
+                </div>
+                <div>
+                    <span class="infohead">类型：{{FILM_genres}}</span>
+                </div>
+                <div>
+                    <span class="infohead">导演：{{FILM_directorsName}}</span>
+                </div>
+                <div>
+                    <span class="infohead">主演：{{FILM_casts}}</span>
+                </div>               
+            </div>
+            <div>
+                <p class="summaryhead">剧情简介</p>
+                <p class="summary">{{FILM_summary}}</p>
+            </div>
+        </div>
+    </script>
+</body>
+
+</html>
